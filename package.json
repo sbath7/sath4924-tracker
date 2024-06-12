@@ -1,0 +1,20 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "Basic server using Node.js & Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sath4924-tracker"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "HTTP"
+  ],
+  "author": "Sarah Athar",
+  "license": "ISC"
+}
