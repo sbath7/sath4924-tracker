@@ -6,10 +6,83 @@
     <title>'Touch Grass' - Tracking Application</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Touch Grass</h1>
-    <p>An application that helps you track how much time you spend in nature.</p>
 
+
+<body>
+    <!--Container for the entire content -->
+    <div class="container">
+  
+      <!-- Header section -->
+      <header>
+        <!-- Title of the application -->
+        <h1> Task Tracker </h1>
+      </header>
+  
+      <!-- Form to capture task data -->
+      <form id="taskForm">
+  
+        <!-- an input element is needed for each of the pieces of data associated with the tasks -->
+        <!-- recommended structure copied from W4 TUT to create accessible forms and to help with CSS styling -->
+        <!-- input field for task name -->
+        <div class="form-row">
+          <!-- for attribute is being used to connect the label with the input. This is especially important for acessibility devices like screen readers. -->
+          <label for="taskName">Name</label>
+          <!-- type is specifying the kind of data that the input accepts -->
+          <!-- the name attribute is used for handling data submission, allowing us to access the form values by referring to their name. -->
+          <!-- for inputs, the id must be the same value as the for attribute on the label element-->
+          <!-- required attribute makes the field mandatory for the user(?), providing a message if left blank-->
+          <input type="text" name="taskName" id="taskName" required="true" />
+        </div>
+  
+        <!-- Dropdown select for task type -->
+        <div class="form-row">
+          <label for="taskType">Type</label>
+          <select name="taskType" id="taskType" required="true">
+            <option disabled label="Select One" selected values="">Select One</option>
+            <!-- value attribute contains the data value to submit to the server when that option is selected. -->
+            <option value="Concept Ideation">Concept Ideation</option>
+            <option value="Wireframe Design">Wireframe Design</option>
+            <option value="Application Coding">Application Coding</option>
+            <option value="Testing/Debugging">Testing/Debugging</option>
+          </select>
+        </div>
+  
+        <!-- Input field for task rate -->
+        <div class="form-row">
+          <label for="taskRate">Rate</label>
+          <input type="number" name="taskRate" id="taskRate" required="true" />
+        </div>
+  
+        <!-- Input field for task time -->
+        <div class="form-row">
+          <label for="taskTime">Time (hours)</label>
+          <input type="number" name="taskTime" id="taskTime" required="true" />
+        </div>
+  
+        <!-- Input field for task client -->
+        <div class="form-row">
+          <label for="taskClient">Client</label>
+          <input type="text" name="taskClient" id="taskClient" required="true" />
+        </div>
+  
+        <!-- Submit button to add task -->
+        <div class="form-row">
+          <input type="submit" value="Add Task">
+        </div>
+      </form>
+  
+  
+  
+      <!-- adding a place for our tasks to be displayed when we start adding them to the page. -->
+      <h2>Tasks</h2>
+      <!-- un-ordered list -->
+      <ul id="taskList"></ul>
+    </div>
+  
+    <!-- Javascript file for handling form submission and task display -->
     <script src="script.js"></script>
-</body>
+  </body>
+
+
+
 </html>

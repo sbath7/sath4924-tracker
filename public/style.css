@@ -1,0 +1,39 @@
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  
+  /*positioning the title 'Task Tracker' in the center of the page. Using flexbox?*/
+  header > h1 {
+    text-align: center;
+  }
+  
+  /*creating a border for the form, adding width, margin and padding to center it*/
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid grey;
+    padding: 2em 1em;
+  }
+  
+  
+  .form-row {
+    /*making each individual input/label and submit button's container a flexbox*/
+    display: flex;
+    /*aligning the flex container's items, respectively, to the right end of the container as the default axis is horizontal*/
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  
+  /*setting a fixed width of 100 pixels for all the labels to make them nice and consistent*/
+  .form-row > label {
+    width: 100px;
+  }
+   
+  /*providing padding to the input fields and increasing their size to fill up the available space in the flex container*/
+  .form-row > input , select {
+    padding: .5em;
+    flex-grow: 1;
+  }
