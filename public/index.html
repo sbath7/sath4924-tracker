@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>'Touch Grass' - Tracking Application</title>
   <link rel="stylesheet" href="style.css">
+  <!-- linking the DM Sans font which will be used for H2 and p -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <!-- linking the google material symbols system to use their icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 
@@ -14,32 +23,26 @@
 
   <!-- Header section -->
   <header class=navbar>
-
-    <!-- Decorative Title Heading-->
-    <h1> Touch Grass </h1>
+    <!-- Decorative Title Heading. This is displayed as an image as the custom font is not compatible for web dev. -->
+    <img src="/app_assets/touch_grass.png"
+      alt="the words 'Touch Grass' written in a decorative font with plants and flowers intertwined around the letters. ">
 
     <!-- navigation elements-->
     <ul class="nav-list">
-
       <!-- Touch Grass 'TG' logo that links back to the home page -->
-      <li> <a href="index.html" id="logo"> <img src="/" alt="/" width="/" height="/"> </a> </li>
-
+      <li> <a href="index.html" id="logo"> <img src="/app_assets/tg.png" alt="/" width="/" height="/"> </a> </li>
       <!-- Information button -->
       <li> <button class="/"> <span class="material-symbols-outlined"> info_i </span> </button> </li>
-      
       <!-- Alternate Views button -->
       <li> <button class="/"> <span class="material-symbols-outlined"> grid_view </span> </button> </li>
-      
     </ul>
 
     <!-- decorative flowers and grass hero image -->
-    <img src="/" alt="/">
-
+    <img src="/app_assets/header_illustration.png" alt="/">
   </header>
 
 
   <main>
-
     <!-- Section #1 - 'Overview' which contains the daily goal and indicates the day of the week -->
     <section id="overview">
 
@@ -48,7 +51,7 @@
         <p> 0% </p>
         <h2><strong>Enjoy 2 hours in nature this week</strong></h2>
         <p>Spend at least <strong>20 minutes</strong> today to stay on track and boost your overall well-being.</p>
-        <img src="/" alt="/">
+        <img src="/app_assets/weekly_goal_illustration.png" alt="/">
       </div>
 
       <!-- current day indicator-->
@@ -112,13 +115,13 @@
 
       <!-- contains the four wellbeing metric cards -->
       <div id="wellbeing-right-half">
-
         <!-- mood -->
         <div class="wellbeing-metric-unlogged">
           <h2>Mood</h2>
           <p>How are you feeling today?</p>
           <!-- wellbeing metrics' green '+' button -->
-          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
+              class="material-symbols-outlined"> add </span></button>
         </div>
 
         <!-- self-esteem -->
@@ -126,7 +129,8 @@
           <h2>Mood</h2>
           <p>How was your self-esteem today?</p>
           <!-- wellbeing metrics' green '+' button -->
-          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
+              class="material-symbols-outlined"> add </span></button>
         </div>
 
         <!-- stress -->
@@ -134,7 +138,8 @@
           <h2>Stress</h2>
           <p>Did you feel stressed today?</p>
           <!-- wellbeing metrics' green '+' button -->
-          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
+              class="material-symbols-outlined"> add </span></button>
         </div>
 
         <!-- sleep -->
@@ -142,9 +147,9 @@
           <h2>Sleep</h2>
           <p>Sleep well last night?</p>
           <!-- wellbeing metrics' green '+' button -->
-          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
+              class="material-symbols-outlined"> add </span></button>
         </div>
-
       </div>
 
     </section>
@@ -155,7 +160,75 @@
     <!-- Stress Modal -->
     <!-- Sleep Modal -->
 
+    <!-- 'log nature time' modal -->
+    <div id="nature-time-modal">
+      <h1>I 'Touched Grass'!</h1>
+      <!-- form to capture nature time data -->
+      <form>
+        <!-- Input fields for hours and minutes -->
+        <fieldset class="form-row">
+          <legend>For how long?</legend>
+          <label for="natureTimeHours">hour(s)</label>
+          <input type="number" name="natureTimeHours" id="natureTimeHours" required="true" />
+
+          <label for="natureTimeMin">min(s)</label>
+          <input type="number" name="natureTimeMin" id="natureTimeMin" required="true">
+        </fieldset>
+
+        <!-- Dropdown select for task type -->
+        <div class="form-row">
+          <label for="timeOfDay">At what time of day?</label>
+          <select name="timeOfDay" id="timeOfDay" required="true">
+            <option disabled label="Select One" selected values="">Select One</option>
+            <!-- value attribute contains the data value to submit to the server when that option is selected. -->
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+            <option value="Night">Night</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- log mood modal -->
+    <div id="mood-modal"> 
+      <!-- modal heading -->
+      <h1>Mood</h1>
+
+      <!-- image container for different moods displayed -->
+      <div class="image-container">
+        <img id="mood-image" src="" alt="Mood Image">
+      </div>
+
+      <!-- container for different mood words displayed -->
+      <div id="mood-word"></div>
+      
+      <!-- form to capture mood data -->
+      <form>
+        <label for="mood-range"> How are you feeling today? </label>
+        <input type="range" id="mood-range" min="0" max="4" step="1">
+      </form>
+    </div>
+
+
+
+    
+
+
+
+
+
+
   </main>
+
+
+
+
+
+
+
+
 
 
 

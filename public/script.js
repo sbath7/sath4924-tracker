@@ -6,6 +6,40 @@ const taskListElement = document.querySelector("#taskList");
 let taskList = [];
 
 
+//DYNAMIC MOOD RANGE
+document.addEventListener('DOMContentLoaded', function() {
+  const moodRange = document.getElementById('mood-range');
+  const moodWord = document.getElementById('mood-word');
+  const moodImage = document.getElementById('mood-image');
+
+  const moods = [
+      { word: 'Happy', image: '/app_assets/mood_happy.png' },
+      { word: 'Calm', image: '/app_assets/mood_calm.png' },
+      { word: 'Anxious', image: '/app_assets/mood_anxious.png' },
+      { word: 'Sad', image: '/app_assets/mood_sad.png' },
+      { word: 'Angry', image: '/app_assets/mood_angry.png' }
+  ];
+
+  function updateMood() {
+      const mood = moods[moodRange.value];
+      moodWord.textContent = mood.word;
+      moodImage.src = mood.image;
+      moodImage.alt = mood.word;
+  }
+
+  moodRange.addEventListener('input', updateMood);
+
+  // Initialize with the first mood
+  updateMood();
+});
+
+
+
+
+
+
+
+
 
 
 
