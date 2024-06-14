@@ -203,7 +203,7 @@ The application uses localStorage for data persistence, which is limited to a sp
 <br>
 
 ## Recommendations
-I couldn't implement the alternate (monthly/yearly) view screens due to time constraints. Implementing these in the future, would enhance the user experience, providing a powerful overview.
+I couldn't implement the alternate (monthly/yearly) view screens due to time constraints. Implementing these in the future, would enhance the user experience, providing a powerful overview. Furthermore, the ability to back-date nature sessions and revisit previous days to log nature time using the 'day indicator' would provide users with greater control.
 
 <br>
 <br>

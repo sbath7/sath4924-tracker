@@ -1,87 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>'Touch Grass' - Tracking Application</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>'Touch Grass' - Tracking Application</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 
+
 <body>
-    <!--Container for the entire content -->
-    <div class="container">
-  
-      <!-- Header section -->
-      <header>
-        <!-- Title of the application -->
-        <h1> Task Tracker </h1>
-      </header>
-  
-      <!-- Form to capture task data -->
-      <form id="taskForm">
-  
-        <!-- an input element is needed for each of the pieces of data associated with the tasks -->
-        <!-- recommended structure copied from W4 TUT to create accessible forms and to help with CSS styling -->
-        <!-- input field for task name -->
-        <div class="form-row">
-          <!-- for attribute is being used to connect the label with the input. This is especially important for acessibility devices like screen readers. -->
-          <label for="taskName">Name</label>
-          <!-- type is specifying the kind of data that the input accepts -->
-          <!-- the name attribute is used for handling data submission, allowing us to access the form values by referring to their name. -->
-          <!-- for inputs, the id must be the same value as the for attribute on the label element-->
-          <!-- required attribute makes the field mandatory for the user(?), providing a message if left blank-->
-          <input type="text" name="taskName" id="taskName" required="true" />
+
+  <!-- Header section -->
+  <header class=navbar>
+
+    <!-- Decorative Title Heading-->
+    <h1> Touch Grass </h1>
+
+    <!-- navigation elements-->
+    <ul class="nav-list">
+
+      <!-- Touch Grass 'TG' logo that links back to the home page -->
+      <li> <a href="index.html" id="logo"> <img src="/" alt="/" width="/" height="/"> </a> </li>
+
+      <!-- Information button -->
+      <li> <button class="/"> <span class="material-symbols-outlined"> info_i </span> </button> </li>
+      
+      <!-- Alternate Views button -->
+      <li> <button class="/"> <span class="material-symbols-outlined"> grid_view </span> </button> </li>
+      
+    </ul>
+
+    <!-- decorative flowers and grass hero image -->
+    <img src="/" alt="/">
+
+  </header>
+
+
+  <main>
+
+    <!-- Section #1 - 'Overview' which contains the daily goal and indicates the day of the week -->
+    <section id="overview">
+
+      <!-- weekly goal tracker-->
+      <div id="weekly-goal-box">
+        <p> 0% </p>
+        <h2><strong>Enjoy 2 hours in nature this week</strong></h2>
+        <p>Spend at least <strong>20 minutes</strong> today to stay on track and boost your overall well-being.</p>
+        <img src="/" alt="/">
+      </div>
+
+      <!-- current day indicator-->
+      <p>Thursday, 25th April</p>
+      <ul>
+        <li>
+          <p>22<br>M</p>
+        </li>
+        <li>
+          <p>23<br>Tu</p>
+        </li>
+        <li>
+          <p>24<br>W</p>
+        </li>
+        <li>
+          <p>25<br>Th</p>
+        </li>
+        <li>
+          <p>26<br>F</p>
+        </li>
+        <li>
+          <p>27<br>Sa</p>
+        </li>
+        <li>
+          <p>28<br>Su</p>
+        </li>
+      </ul>
+
+      <!-- line break-->
+      <br>
+
+      <!-- tiny arrow pointing down -->
+      <span id="overview-arrow" class="material-symbols-outlined"> arrow_drop_down </span>
+
+      <!-- horizontal rule visually dividing section 1 from section 2 -->
+      <hr>
+    </section>
+
+    <!-- Section #2 - 'Logging' which allows users to log various data, and then displays it -->
+    <section id="logging">
+
+      <!-- contains the 'nature time' content -->
+      <div id="nature-time-left-half">
+
+        <h1>My Day</h1>
+
+        <p>Thursday, 25th April</p>
+
+        <!-- 'Log nature time' button with an '+' icon -->
+        <button class="nature-time-button" onclick="openNatureTimePopup()">
+          <span id="plus-button" class="material-symbols-outlined"> add </span> Log nature time
+        </button>
+
+        <!-- aside to the user -->
+        <p><i>Feeling down?<br>You haven't touched grass all week!</i></p>
+
+        <!-- vertical line dividing the 'nature time' half from the wellbeing metrics half -->
+        <div class="vertical-line"></div>
+
+      </div>
+
+      <!-- contains the four wellbeing metric cards -->
+      <div id="wellbeing-right-half">
+
+        <!-- mood -->
+        <div class="wellbeing-metric-unlogged">
+          <h2>Mood</h2>
+          <p>How are you feeling today?</p>
+          <!-- wellbeing metrics' green '+' button -->
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
         </div>
-  
-        <!-- Dropdown select for task type -->
-        <div class="form-row">
-          <label for="taskType">Type</label>
-          <select name="taskType" id="taskType" required="true">
-            <option disabled label="Select One" selected values="">Select One</option>
-            <!-- value attribute contains the data value to submit to the server when that option is selected. -->
-            <option value="Concept Ideation">Concept Ideation</option>
-            <option value="Wireframe Design">Wireframe Design</option>
-            <option value="Application Coding">Application Coding</option>
-            <option value="Testing/Debugging">Testing/Debugging</option>
-          </select>
+
+        <!-- self-esteem -->
+        <div class="wellbeing-metric-unlogged">
+          <h2>Mood</h2>
+          <p>How was your self-esteem today?</p>
+          <!-- wellbeing metrics' green '+' button -->
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
         </div>
-  
-        <!-- Input field for task rate -->
-        <div class="form-row">
-          <label for="taskRate">Rate</label>
-          <input type="number" name="taskRate" id="taskRate" required="true" />
+
+        <!-- stress -->
+        <div class="wellbeing-metric-unlogged">
+          <h2>Stress</h2>
+          <p>Did you feel stressed today?</p>
+          <!-- wellbeing metrics' green '+' button -->
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
         </div>
-  
-        <!-- Input field for task time -->
-        <div class="form-row">
-          <label for="taskTime">Time (hours)</label>
-          <input type="number" name="taskTime" id="taskTime" required="true" />
+
+        <!-- sleep -->
+        <div class="wellbeing-metric-unlogged">
+          <h2>Sleep</h2>
+          <p>Sleep well last night?</p>
+          <!-- wellbeing metrics' green '+' button -->
+          <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button" class="material-symbols-outlined"> add </span></button>
         </div>
-  
-        <!-- Input field for task client -->
-        <div class="form-row">
-          <label for="taskClient">Client</label>
-          <input type="text" name="taskClient" id="taskClient" required="true" />
-        </div>
-  
-        <!-- Submit button to add task -->
-        <div class="form-row">
-          <input type="submit" value="Add Task">
-        </div>
-      </form>
-  
-  
-  
-      <!-- adding a place for our tasks to be displayed when we start adding them to the page. -->
-      <h2>Tasks</h2>
-      <!-- un-ordered list -->
-      <ul id="taskList"></ul>
-    </div>
-  
-    <!-- Javascript file for handling form submission and task display -->
-    <script src="script.js"></script>
-  </body>
+
+      </div>
+
+    </section>
+
+    <!-- 'Log nature time' Modal -->
+    <!-- Mood Modal -->
+    <!-- Self-esteem Modal -->
+    <!-- Stress Modal -->
+    <!-- Sleep Modal -->
+
+  </main>
+
+
+
+
+
+  <!--Container for the entire content -->
+  <div class="container">
+
+    <!-- Form to capture task data -->
+    <form id="taskForm">
+
+      <!-- an input element is needed for each of the pieces of data associated with the tasks -->
+      <!-- recommended structure copied from W4 TUT to create accessible forms and to help with CSS styling -->
+      <!-- input field for task name -->
+      <div class="form-row">
+        <!-- for attribute is being used to connect the label with the input. This is especially important for acessibility devices like screen readers. -->
+        <label for="taskName">Name</label>
+        <!-- type is specifying the kind of data that the input accepts -->
+        <!-- the name attribute is used for handling data submission, allowing us to access the form values by referring to their name. -->
+        <!-- for inputs, the id must be the same value as the for attribute on the label element-->
+        <!-- required attribute makes the field mandatory for the user(?), providing a message if left blank-->
+        <input type="text" name="taskName" id="taskName" required="true" />
+      </div>
+
+      <!-- Dropdown select for task type -->
+      <div class="form-row">
+        <label for="taskType">Type</label>
+        <select name="taskType" id="taskType" required="true">
+          <option disabled label="Select One" selected values="">Select One</option>
+          <!-- value attribute contains the data value to submit to the server when that option is selected. -->
+          <option value="Concept Ideation">Concept Ideation</option>
+          <option value="Wireframe Design">Wireframe Design</option>
+          <option value="Application Coding">Application Coding</option>
+          <option value="Testing/Debugging">Testing/Debugging</option>
+        </select>
+      </div>
+
+      <!-- Input field for task rate -->
+      <div class="form-row">
+        <label for="taskRate">Rate</label>
+        <input type="number" name="taskRate" id="taskRate" required="true" />
+      </div>
+
+      <!-- Input field for task time -->
+      <div class="form-row">
+        <label for="taskTime">Time (hours)</label>
+        <input type="number" name="taskTime" id="taskTime" required="true" />
+      </div>
+
+      <!-- Input field for task client -->
+      <div class="form-row">
+        <label for="taskClient">Client</label>
+        <input type="text" name="taskClient" id="taskClient" required="true" />
+      </div>
+
+      <!-- Submit button to add task -->
+      <div class="form-row">
+        <input type="submit" value="Add Task">
+      </div>
+    </form>
+
+
+
+    <!-- adding a place for our tasks to be displayed when we start adding them to the page. -->
+    <h2>Tasks</h2>
+    <!-- un-ordered list -->
+    <ul id="taskList"></ul>
+  </div>
+
+
+
+  <!-- Javascript file for handling form submission and task display -->
+  <script src="script.js"></script>
+</body>
 
 
 
