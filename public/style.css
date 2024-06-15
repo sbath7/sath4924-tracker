@@ -1,5 +1,6 @@
 /*Basic CSS reset to reset default browser styles and ensure consistent pages across browsers*/
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -9,34 +10,35 @@ html, body {
 }
 
 /*resetting the default ul margins*/
- ul {
+ul {
   margin: 0;
   padding: 0;
 }
 
+/*making the header take up the whole width of the viewport*/
 header {
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-/* The 'navbar' class is being used to assign flex and other properties to the header. */
-.navbar {
+/* The 'navbar' id is being used to assign flex and other properties. */
+#navbar {
   /*positioned within context of the body*/
   position: fixed;
-  /*the header will be as wide as the body*/
+  /*the navbar will be as wide as the body*/
   width: 100%;
   /*assigning flexbox*/
-  display: flex; 
+  display: flex;
   /*centers contents along the main axis*/
   justify-content: space-between;
   /*centers contents along the cross axis*/
   align-items: center;
   /*white colour*/
   background-color: white;
-  /*stacks the header in front of all other content*/
+  /*stacks the navbar in front of all other content*/
   z-index: 1000;
+  /*adding padding for all four edges*/
   padding: 1rem;
+  /*ensuring that padding and border are included within the total width and height of an element */
   box-sizing: border-box;
 }
 
@@ -44,177 +46,265 @@ header {
 /*Using flexbox to layout the navigation page links*/
 .nav-links {
   display: flex;
-  /*adds a small gap between each link*/
+  /*adding a small gap between each link*/
   gap: 1.5rem;
-  /*removes the bullet points*/
+  /*removing the bullet points*/
   list-style: none;
 }
 
+/*adding padding around all four edges of the 'main' area inside the body*/
 main {
   padding: 1.1rem;
 }
 
-#header-illustration {
-  width: 100%;
-  max-width: 100vw; /* In case 100vw causes issues with overflow */
+#header-illustration { 
+  /*ensuring the decorative flower illustration takes up the whole width of the viewport*/
+  width: 100%;            
+   /*element will grow in height to accommodate image inside*/
   height: auto;
-  padding-top: 2.7rem; /* Optional padding */
+  /*adding padding just above the illustration*/          
+  padding-top: 2.7rem;    
 }
 
-
+/*formatting the mint green weekly goal box*/
 #weekly-goal-box {
-  display:flex;
+  display: flex;
   justify-content: space-around;
-  color: #3E620D;
+  /*changing the font colour*/
+  color: #3E620D;    
   align-items: center;
-  background-color: #CFE2B7; /* mint green background color */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  /* mint green background color */
+  background-color: #CFE2B7;
+  /* Rounded corners */
+  border-radius: 20px;
+  /* Adds shadow for depth */
+  box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem;
 }
 
-
+/*formatting the circle around the weekly goal % */
 #circle {
-  display: flex; /* Ensures the element is only as wide as its content */
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 6.25rem;
   height: 6.25rem;
-  padding: 0.438rem; /* Adjust padding to increase the size of the circle */
-  border: 0.563rem solid #B6C99E; /* Creates the outline */
-  border-radius: 50%; /* Makes the border a circle */
-  text-align: center; /* Centers the text inside the circle */
+  /* Adjusting padding to increase the size of the circle */
+  padding: 0.438rem;
+  /* Creating the circle outline */
+  border: 0.563rem solid #B6C99E;
+  /* Increasing the border radius so it looks like a circle */
+  border-radius: 50%;
+  /* Centering the text inside the circle */
+  text-align: center;
 }
 
-
+/*formatting the mint green box around today's date '25, Th'*/
 #today {
   color: #3E620D;
-  background-color: #CFE2B7; /* mint green background color */
-  border-radius: 20px; /* Rounded corners */
+  background-color: #CFE2B7;
+  border-radius: 20px;
   padding: 1px 22px;
 }
 
-/*Setting custom font sizes*/
-h1{
- font-size: 48px; 
+/*Setting custom font sizes, overriding the default heading/p styles*/
+h1 {
+  font-size: 48px;
 }
 
-h2{
-  font-size: 20px; 
- }
+h2 {
+  font-size: 20px;
+}
 
- p {
-  font-size: 18px; 
- }
+p {
+  font-size: 18px;
+}
 
+/*formatting the container containing today's day, the days of the week and a tiny arrow*/
 #week-container {
   padding-top: 1rem;
-  display:flex;
+  display: flex;
+  /*centering all three elements vertically and aligning them in a column.*/
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%
 }
 
+/*formatting the days of the week e.g., 25 Thu, 26 Fri, etc.*/
 #days-of-week {
   display: flex;
+  /*aligning them at the top of the flex-container (vertically)*/
   align-items: flex-start;
-  justify-content:space-evenly;
+  /*spacing them out evenly*/
+  justify-content: space-evenly;
   width: 100%
-
 }
 
-
-#days-of-week li{
+/*formatting the individual days, centering the words and displaying them in a column*/
+#days-of-week li {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-#logging{
+/*formatting Section 2: Logging*/
+#logging {
   display: flex;
+  /*spacing out the two halves evenly*/
   justify-content: space-evenly;
+  /*the gap between the two halves*/
   gap: 1rem;
 }
 
-.logging-column{
+/*ensuring each half takes up equal amount of space*/
+.logging-column {
   flex: 1;
 }
 
-#nature-time-half{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
+/*formatting the log 'nature time' half*/
+#nature-time-half {
+  display: flex;
+  /*adding space between the text content and the green log button*/
+  justify-content: space-between;
+  /*pushing the text content to the left side*/
+  align-items: flex-start;
 }
 
-#nature-time-button{
+/*formatting the '+ log nature time' button*/
+#nature-time-button {
   background-color: #3E620D;
   color: #CFE2B7;
-  border: none;
+  /*removing the default border*/
+  border: none; 
+  /*changing the default font*/
   font-family: 'DM Sans', sans-serif;
+  /*rounding the corners*/
   border-radius: 40px;
   padding: 0.9rem;
   font-size: 1.25rem;
-  display:flex;
+  display: flex;
+  /*vertically aligning the '+' button and the log nature time' text*/
   align-items: center;
+  /*gap between those two elements*/
   gap: 0.7rem;
-  transform:translateY(53px)
+  /*vertically moving the button so it's inline with the 'My Day' heading*/
+  transform: translateY(53px)
 }
 
+/*formatting the other half of the section*/
 #wellbeing-half {
   display: flex;
+  /*wrapping the elements so they appear as a grid*/
   flex-wrap: wrap;
+  /*gap between the cards*/
   gap: 2rem;
   padding-top: 1.7rem;
 }
 
+/*formatting the four cards*/
 .wellbeing-metric-unlogged {
   color: #3E620D;
-  background-color: #CFE2B7; /* mint green background color */
-  border-radius: 20px; /* Rounded corners */
+  background-color: #CFE2B7;
+  /* Rounded corners */
+  border-radius: 20px;
   padding: 30px;
-  flex: 1 1 calc(40% - 2rem); /*Each box takes up 40% of the container's width, minus the gap*/
+  /*Each box takes up 40% of the container's width, minus the gap*/
+  flex: 1 1 calc(40% - 2rem);
 }
 
-.wellbeing-button{
+/*formatting the four wellbeing metric '+' buttons*/
+.wellbeing-button {
   background-color: #3E620D;
   color: #FFFFFF;
   border: none;
+  /*rounding it so it appears as a circle*/
   border-radius: 3.125rem;
   padding: 1.2rem;
   display: flex;
   align-items: center;
-  transform: translateX(115px); /* Moves the item 20px to the right */
+  /* Moving the green buttons 115px to the right */
+  transform: translateX(115px);
 }
 
-/*creating a border for the form, adding width, margin and padding to center it*/
-  
+/*formatting the form inside the log 'nature time' modal*/
 #nature-time-modal > form {
-  display:flex;
+  display: flex;
+  /*making the inputs appear in a column*/
   flex-direction: column;
-  justify-content:flex-start;
+  /*aligning them with the left hand side*/
+  justify-content: flex-start;
+  /*gap between the "For how long?" and "At what time of day?" fields*/
   gap: 3rem;
   padding: 2rem 1rem;
   max-width: 500px;
 }
 
-fieldset.form-row{
+/*removing the default fieldset styling*/
+fieldset.form-row {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-fieldset > legend{
-  padding-bottom:1rem;
+/*adding padding underneath the legend*/
+fieldset > legend {
+  padding-bottom: 1rem;
 }
 
+/*formatting the time of day dropdown*/
 #time-of-day {
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
+/*formatting all the modals*/
+#stress,
+#sleep,
+#self-esteem,
+#mood,
+#log-nature-time {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/*formatting the green wellbeing metric modals*/
+#stress,
+#sleep,
+#self-esteem,
+#mood {
+  background-color: #CFE2B7;
+}
+
+/*centering the wellbeing metric word selected by the user and making it bold*/
+#mood-word,
+#stress-word,
+#sleep-word,
+#self-esteem-word {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/*making the form content in the green wellbeing modals aligned in the center i.e., the label and the range*/
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/*changing the default font of the dropdown*/
+#timeOfDay {
+  font-family: 'DM Sans', sans-serif;
+}
+
 
 
 /* MEDIA QUERIES - LARGER MOBILE DEVICE 430x932 */
@@ -232,36 +322,29 @@ fieldset > legend{
   p {
     font-size: rem;
   }
-
+  
+  /*removing the decorative title*/
   #title {
-    display:none;
+    display: none;
   }
 
-  #goal-illustration{
-    display:none;
+  /*removing the long weekly goal illustration*/
+  #goal-illustration {
+    display: none;
   }
 
-  #header-illustration{
+  /*increasing the margin above the header illustration and increasing its size to expand the image on smaller screens*/
+  #header-illustration {
     margin-top: 5rem;
     display: inline;
     width: 300%;
 
   }
 
+  /*reducing the size of the weekly goal % circle*/
   #circle {
     width: 100px;
     height: 100px;
   }
 
-
-  
-
-
-
 }
-
-
-
-
-  
-

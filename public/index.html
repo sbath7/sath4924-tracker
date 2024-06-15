@@ -3,117 +3,107 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- viewport meta tag allows the file to know how it should scale our content based on our device. It also enables the use of media queries. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- page title -->
   <title>'Touch Grass' - Tracking Application</title>
-  <!-- linking the CSS sheet-->
+  <!-- linking the CSS sheet to apply styles-->
   <link rel="stylesheet" href="style.css">
   <!-- linking the DM Sans font which will be used for h1, h2 and p -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-  <!-- linking the google material symbols system to use their icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+  <!-- linking google material symbols system to use icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 
+
 <body>
-  
   <!-- Header section -->
   <header>
-    <nav class="navbar">
-      <!-- navigation elements-->
-      
+    <!-- navigation bar containing nav elements -->
+    <nav id="navbar">
       <ul class="nav-links">
         <!-- Touch Grass 'TG' logo that links back to the home page -->
         <li> <a href="index.html" id="logo"> <img src="/app_assets/tg.png" alt="/" width="/" height="/"> </a> </li>
-        <!-- Information button -->
       </ul>
 
-      <!-- Decorative Title Heading. This is displayed as an image as the custom font is not compatible for web dev. -->
-      <img id="title" src="/app_assets/touch_grass.png" alt="the words 'Touch Grass' written in a decorative font with plants and flowers intertwined around the letters. ">
+      <!-- decorative title heading (this is being displayed as an image as the custom font is not compatible for web dev.) -->
+      <img id="title" src="/app_assets/touch_grass.png"
+        alt="the words 'Touch Grass' written in a decorative font with plants and flowers intertwined around the letters. ">
 
-      <ul class="nav-links"> 
-        <!-- Alternate Views button -->
+      <ul class="nav-links">
+        <!-- Alternate Views "button" -->
         <li><span class="material-symbols-outlined" id="i-button" style="font-size: 30px"> info_i </span></li>
+        <!-- Information "button" -->
         <li><span class="material-symbols-outlined" style="font-size: 30px"> grid_view </span></li>
       </ul>
     </nav>
 
-    <!-- decorative flowers and grass hero image -->
-     <img id ="header-illustration" src="/app_assets/header_illustration.png" alt="/">
-    
-    <!-- <picture>
-      <source media="(max-width: 430px)" srcset="/app_assets/header_mobile.png">
-      <source class="header-illustration" media="(min-width: 431px)" srcset="/app_assets/header_illustration.png">
-      <img class="header-illustration" src="/app_assets/header_illustration.png" alt="A descriptive text about the image" style="width:auto;">
-    </picture> -->
-
-
+    <!-- decorative plants and flowers hero image -->
+    <img id="header-illustration" src="/app_assets/header_illustration.png" alt="/">
   </header>
-
-  
-  
 
 
 
   <main>
-    <!-- Section #1 - 'Overview' which contains the daily goal and indicates the day of the week -->
+    <!-- Section #1: 'Overview' - contains the weekly goal and dayOfTheWeek indicator -->
     <section id="overview">
 
       <!-- weekly goal tracker-->
       <div id="weekly-goal-box">
-        <div id="circle">
-          <p> 0% </p>
-        </div>
-        <div id= weekly-goal-text>
+        <!-- circle outside the '% completed' -->
+        <div id="circle"> <p> 0% </p> </div>
+        <!-- text content inside the weekly goal box-->
+        <div id=weekly-goal-text>
           <h2><strong>Enjoy 2 hours in nature this week</strong></h2>
           <p>Spend at least <strong>20 minutes</strong> today to stay on <br> track and boost your overall well-being.</p>
         </div>
+        <!-- illustration of people sitting outside, bicycling, etc.-->
         <img id="goal-illustration" src="/app_assets/weekly_goal_illustration.png" alt="/">
       </div>
 
-      <!-- current day indicator-->
+      <!-- dayOfTheWeek indicator-->
       <div id="week-container">
+        <!-- today's date written: 'Thursday, 25th April' -->
         <p id="today-date"><strong>Thursday, 25th April</strong></p>
+        <!-- days of the week listed-->
         <ul id="days-of-week">
+          <li><p>22<br>M</p></li>
+          <li><p>23<br>Tu</p></li>
+          <li><p>24<br>W</p></li>
           <li>
-            <p>22<br>M</p>
+            <span id="today">
+              <p>25<br>Th</p>
+            </span>
           </li>
-          <li>
-            <p>23<br>Tu</p>
-          </li>
-          <li>
-            <p>24<br>W</p>
-          </li>
-          <li>
-            <span id="today"><p>25<br>Th</p></span>
-          </li>
-          <li>
-            <p>26<br>F</p>
-          </li>
-          <li>
-            <p>27<br>Sa</p>
-          </li>
-          <li>
-            <p>28<br>Su</p>
-          </li>
+          <li><p>26<br>F</p></li>
+          <li><p>27<br>Sa</p></li>
+          <li><p>28<br>Su</p></li>
         </ul>
 
         <!-- line break-->
         <br>
 
-        <!-- tiny arrow pointing down -->
+        <!-- tiny arrow pointing downwards to next section -->
         <span id="overview-arrow" class="material-symbols-outlined"> arrow_drop_down </span>
       </div>
-      <!-- horizontal rule visually dividing section 1 from section 2 -->
+
+      <!-- horizontal rule dividing section 1 from section 2 -->
       <hr>
     </section>
 
-    <!-- Section #2 - 'Logging' which allows users to log various data, and then displays it -->
-    <section id="logging">
 
-      <!-- contains the 'nature time' content -->
+
+    <!-- Section #2: 'Logging' - users can log various data and then view it. -->
+    <section id="logging">
+      <!-- container for the log 'nature time' half -->
       <div id="nature-time-half" class="logging-column">
+        <!-- container for the My Day/'nature time' text content-->
         <div id="text-content">
           <h1>My Day</h1>
           <p>Thursday, 25th April</p>
@@ -121,10 +111,10 @@
           <p><i>Feeling down?<br>You haven't touched grass all week!</i></p>
         </div>
 
-        <!-- 'Log nature time' button with an '+' icon -->
+        <!-- 'Log nature time' button with a '+' icon -->
         <button id="nature-time-button" onclick="openNatureTimePopup()">
           <span id="plus-button" class="material-symbols-outlined"> add </span> Log nature time
-        </button>        
+        </button>
       </div>
 
       <!-- vertical line dividing the 'nature time' half from the wellbeing metrics half -->
@@ -132,44 +122,44 @@
 
       <!-- contains the four wellbeing metric cards -->
       <div id="wellbeing-half" class="logging-column">
-        <!-- mood -->
+        <!-- Mood card -->
         <div class="wellbeing-metric-unlogged">
           <h2>Mood</h2>
           <p>How are you feeling today?</p>
           <br>
           <br>
-          <!-- wellbeing metrics' green '+' button -->
+          <!-- green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
         </div>
 
-        <!-- self-esteem -->
+        <!-- Self-esteem card -->
         <div class="wellbeing-metric-unlogged">
           <h2>Self-esteem</h2>
           <p>How was your self-esteem today?</p>
           <br>
           <br>
-          <!-- wellbeing metrics' green '+' button -->
+          <!-- circular green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
         </div>
 
-        <!-- stress -->
+        <!-- Stress card -->
         <div class="wellbeing-metric-unlogged">
           <h2>Stress</h2>
           <p>Did you feel stressed today?</p>
           <br>
-          <!-- wellbeing metrics' green '+' button -->
+          <!-- circular green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
         </div>
 
-        <!-- sleep -->
+        <!-- Sleep card -->
         <div class="wellbeing-metric-unlogged">
           <h2>Sleep</h2>
           <p>How was your sleep last night?</p>
           <br>
-          <!-- wellbeing metrics' green '+' button -->
+          <!-- circular green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
         </div>
@@ -178,26 +168,34 @@
     </section>
 
 
+
+    <!-- Section #3: Log 'nature time' modal - users can use the form in this section to log their 'nature time'.-->
     <section id="log-nature-time">
-      <!-- 'log nature time' modal -->
+      <!-- 'nature time' modal container -->
       <div id="nature-time-modal">
+        <!-- title -->
         <h1>I 'Touched Grass'!</h1>
         <!-- form to capture nature time data -->
         <form>
-          <!-- Input fields for hours and minutes -->
+          <!-- Input fields and labels for hours and minutes -->
           <fieldset class="form-row">
+            <!-- question -->
             <legend>For how long?</legend>
+            <!-- hours -->
             <label for="natureTimeHours">hour(s)</label>
             <input type="number" name="natureTimeHours" id="natureTimeHours" required="true" />
-
+            <!-- minutes -->
             <label for="natureTimeMin">min(s)</label>
             <input type="number" name="natureTimeMin" id="natureTimeMin" required="true">
           </fieldset>
 
           <!-- Dropdown select for task type -->
           <div id="time-of-day" class="form-row">
+            <!-- time of day label -->
             <label for="timeOfDay">At what time of day?</label>
+            <!-- time of day dropdown -->
             <select name="timeOfDay" id="timeOfDay" required="true">
+              <!-- dropdown options -->
               <option disabled label="Select One" selected values="">Select One</option>
               <!-- value attribute contains the data value to submit to the server when that option is selected. -->
               <option value="Morning">Morning</option>
@@ -211,9 +209,11 @@
     </section>
 
 
+
+    <!-- Section #4: Mood modal - users can use the form in this section to log their mood for the day-->
     <section id="mood">
-      <!-- log mood modal -->
-      <div id="mood-modal"> 
+      <!-- log mood modal container -->
+      <div id="mood-modal">
         <!-- modal heading -->
         <h1>Mood</h1>
 
@@ -224,19 +224,23 @@
 
         <!-- container for different mood words displayed -->
         <div id="mood-word"></div>
-        
+
         <!-- form to capture mood data -->
-        <form>
+        <form class="form-content">
           <label for="mood-range"> How are you feeling today? </label>
           <input type="range" id="mood-range" min="0" max="4" step="1">
         </form>
-      </div> 
+
+
+      </div>
     </section>
 
 
+
+    <!-- Section #5: Self-esteem modal - users can use the form in this section to log their self-esteem for the day-->
     <section id="self-esteem">
-      <!-- log self-esteem modal -->
-      <div id="self-esteem-modal"> 
+      <!-- log self-esteem modal container -->
+      <div id="self-esteem-modal">
         <!-- modal heading -->
         <h1>Self-Esteem</h1>
 
@@ -245,21 +249,23 @@
           <img id="self-esteem-image" src="" alt="Self-Esteem Image">
         </div>
 
-        <!-- container for different mood words displayed -->
+        <!-- container for different self esteem descriptors displayed -->
         <div id="self-esteem-word"></div>
-        
-        <!-- form to capture mood data -->
-        <form>
+
+        <!-- form to capture self esteem data -->
+        <form class="form-content">
           <label for="self-esteem-range"> How was your self esteem today? </label>
           <input type="range" id="self-esteem-range" min="0" max="4" step="1">
         </form>
-      </div> 
+      </div>
     </section>
 
 
+
+    <!-- Section #6: Stress modal - users can use the form in this section to log their stress-levels for the day -->
     <section id="stress">
-      <!-- log stress modal -->
-      <div id="stress-modal"> 
+      <!-- log stress modal container -->
+      <div id="stress-modal">
         <!-- stress heading -->
         <h1>Stress</h1>
 
@@ -268,21 +274,21 @@
           <img id="stress-image" src="" alt="Stress Image">
         </div>
 
-        <!-- container for different mood words displayed -->
+        <!-- container for different stress descriptors displayed -->
         <div id="stress-word"></div>
-        
-        <!-- form to capture mood data -->
-        <form>
+
+        <!-- form to capture stress level data -->
+        <form class="form-content">
           <label for="stress-range"> How were your stress-levels today? </label>
           <input type="range" id="stress-range" min="0" max="4" step="1">
         </form>
-      </div> 
+      </div>
     </section>
 
-
+    <!-- Section #7: Sleep Modal - users can use the form in this section to log their sleep rating for the day-->
     <section id="sleep">
-      <!-- log sleep modal -->
-      <div id="sleep-modal"> 
+      <!-- log sleep modal container -->
+      <div id="sleep-modal">
         <!-- sleep heading -->
         <h1>Sleep</h1>
 
@@ -291,30 +297,22 @@
           <img id="sleep-image" src="" alt="Sleep Image">
         </div>
 
-        <!-- container for different sleep rating words displayed -->
+        <!-- container for different sleep descriptors displayed -->
         <div id="sleep-word"></div>
-        
+
         <!-- form to capture sleep data -->
-        <form>
+        <form class="form-content">
           <label for="sleep-range"> How was your sleep last night? </label>
           <input type="range" id="sleep-range" min="0" max="4" step="1">
         </form>
-      </div> 
+      </div>
     </section>
 
   </main>
 </body>
 
 
-
-
-
-
-<!-- ---------------
-EXPERIMENTATION/ASSETS
---------------- -->
-
-  <!-- Javascript file for handling form submission and task display -->
-  <script src="script.js"></script>
+<!-- Javascript file for handling form submission and task display -->
+<script src="script.js"></script>
 
 </html>

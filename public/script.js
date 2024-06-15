@@ -1,32 +1,31 @@
-//Accessing the form element and storing it in a variable
-const form = document.querySelector("#taskForm");
-//Accessing the task list element and storing it in a variable
-const taskListElement = document.querySelector("#taskList");
-// Define an empty array called 'taskList'
-let taskList = [];
-
 
 /*DYNAMIC MOOD RANGE*/
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+  //selecting the mood-range HTMl element by its id
   const moodRange = document.getElementById('mood-range');
+   //selecting the mood-word HTMl element by its id
   const moodWord = document.getElementById('mood-word');
+   //selecting the mood-image HTMl element by its id
   const moodImage = document.getElementById('mood-image');
 
+  //Creating a 'moods' array with different objects for each mood containing its descriptor and image as properties
   const moods = [
-      { word: 'Happy', image: '/app_assets/mood_happy.png' },
-      { word: 'Calm', image: '/app_assets/mood_calm.png' },
-      { word: 'Anxious', image: '/app_assets/mood_anxious.png' },
-      { word: 'Sad', image: '/app_assets/mood_sad.png' },
-      { word: 'Angry', image: '/app_assets/mood_angry.png' }
+    { word: 'Happy', image: '/app_assets/mood_happy.png' },
+    { word: 'Calm', image: '/app_assets/mood_calm.png' },
+    { word: 'Anxious', image: '/app_assets/mood_anxious.png' },
+    { word: 'Sad', image: '/app_assets/mood_sad.png' },
+    { word: 'Angry', image: '/app_assets/mood_angry.png' }
   ];
 
+  //creating a function to update the mood word, image and alt text everytime the range value changes
   function updateMood() {
-      const mood = moods[moodRange.value];
-      moodWord.textContent = mood.word;
-      moodImage.src = mood.image;
-      moodImage.alt = mood.word;
+    const mood = moods[moodRange.value];
+    moodWord.textContent = mood.word;
+    moodImage.src = mood.image;
+    moodImage.alt = mood.word;
   }
 
+  //adding an event listener that updates the mood using the previous function each time input is added into the range
   moodRange.addEventListener('input', updateMood);
 
   // Initialize with the first mood
@@ -34,25 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+/* ^Above code repeated below but modified for the self-esteem, stress and sleep forms */
+
 /*DYNAMIC SELF-ESTEEM RANGE*/
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const selfEsteemRange = document.getElementById('self-esteem-range');
   const selfEsteemWord = document.getElementById('self-esteem-word');
   const selfEsteemImage = document.getElementById('self-esteem-image');
 
   const selfEsteemRatings = [
-      { word: 'Very Low', image: '/app_assets/self_esteem_very_low.png' },
-      { word: 'Low', image: '/app_assets/self_esteem_low.png' },
-      { word: 'Moderate', image: '/app_assets/self_esteem_moderate.png' },
-      { word: 'High', image: '/app_assets/self_esteem_high.png' },
-      { word: 'Very High', image: '/app_assets/self_esteem_very_high.png' }
+    { word: 'Very Low', image: '/app_assets/self_esteem_very_low.png' },
+    { word: 'Low', image: '/app_assets/self_esteem_low.png' },
+    { word: 'Moderate', image: '/app_assets/self_esteem_moderate.png' },
+    { word: 'High', image: '/app_assets/self_esteem_high.png' },
+    { word: 'Very High', image: '/app_assets/self_esteem_very_high.png' }
   ];
 
   function updateSelfEsteem() {
-      const selfEsteem = selfEsteemRatings[selfEsteemRange.value];
-      selfEsteemWord.textContent = selfEsteem.word;
-      selfEsteemImage.src = selfEsteem.image;
-      selfEsteemImage.alt = selfEsteem.word;
+    const selfEsteem = selfEsteemRatings[selfEsteemRange.value];
+    selfEsteemWord.textContent = selfEsteem.word;
+    selfEsteemImage.src = selfEsteem.image;
+    selfEsteemImage.alt = selfEsteem.word;
   }
 
   selfEsteemRange.addEventListener('input', updateSelfEsteem);
@@ -62,25 +63,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 /*DYNAMIC STRESS RANGE*/
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const stressRange = document.getElementById('stress-range');
   const stressWord = document.getElementById('stress-word');
   const stressImage = document.getElementById('stress-image');
 
   const stressLevels = [
-      { word: 'Very Low', image: '/app_assets/stress_very_low.png' },
-      { word: 'Low', image: '/app_assets/stress_low.png' },
-      { word: 'Moderate', image: '/app_assets/stress_moderate.png' },
-      { word: 'High', image: '/app_assets/stress_high.png' },
-      { word: 'Very High', image: '/app_assets/stress_very_high.png' }
+    { word: 'Very Low', image: '/app_assets/stress_very_low.png' },
+    { word: 'Low', image: '/app_assets/stress_low.png' },
+    { word: 'Moderate', image: '/app_assets/stress_moderate.png' },
+    { word: 'High', image: '/app_assets/stress_high.png' },
+    { word: 'Very High', image: '/app_assets/stress_very_high.png' }
   ];
 
   function updateStress() {
-      const stress = stressLevels[stressRange.value];
-      stressWord.textContent = stress.word;
-      stressImage.src = stress.image;
-      stressImage.alt = stress.word;
+    const stress = stressLevels[stressRange.value];
+    stressWord.textContent = stress.word;
+    stressImage.src = stress.image;
+    stressImage.alt = stress.word;
   }
 
   stressRange.addEventListener('input', updateStress);
@@ -90,25 +92,26 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
 /*DYNAMIC SLEEP RANGE*/
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const sleepRange = document.getElementById('sleep-range');
   const sleepWord = document.getElementById('sleep-word');
   const sleepImage = document.getElementById('sleep-image');
 
   const sleepLevels = [
-      { word: 'Poor', image: '/app_assets/sleep_poor.png' },
-      { word: 'Average', image: '/app_assets/sleep_average.png' },
-      { word: 'Fair', image: '/app_assets/sleep_fair.png' },
-      { word: 'Good', image: '/app_assets/sleep_good.png' },
-      { word: 'Excellent', image: '/app_assets/sleep_excellent.png' }
+    { word: 'Poor', image: '/app_assets/sleep_poor.png' },
+    { word: 'Average', image: '/app_assets/sleep_average.png' },
+    { word: 'Fair', image: '/app_assets/sleep_fair.png' },
+    { word: 'Good', image: '/app_assets/sleep_good.png' },
+    { word: 'Excellent', image: '/app_assets/sleep_excellent.png' }
   ];
 
   function updateSleep() {
-      const sleep = sleepLevels[sleepRange.value];
-      sleepWord.textContent = sleep.word;
-      sleepImage.src = sleep.image;
-      sleepImage.alt = sleep.word;
+    const sleep = sleepLevels[sleepRange.value];
+    sleepWord.textContent = sleep.word;
+    sleepImage.src = sleep.image;
+    sleepImage.alt = sleep.word;
   }
 
   sleepRange.addEventListener('input', updateSleep);
@@ -117,6 +120,35 @@ document.addEventListener('DOMContentLoaded', function() {
   updateSleep();
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SEPARATE CODE BELOW completed for a test task tracker in DECO2017 tutorials. I was going to modify this to match my own data model however, was unable to due to time constraints.*/
+
+
+
+
+
+
+//Accessing the form element and storing it in a variable
+const form = document.querySelector("#taskForm");
+//Accessing the task list element and storing it in a variable
+const taskListElement = document.querySelector("#taskList");
+// Define an empty array called 'taskList'
+let taskList = [];
 
 
 /*EVERYTIME SOMEONE PRESSES SUBMIT, ADD TASK FUNCTION IS RUN AND THE PARAMETERS ARE WHATEVER THE USER HAS INPUTTED*/
@@ -128,7 +160,7 @@ form.addEventListener("submit", function (event) {
   //Preventing the default form submission behaviour. The default action of the form when the submit button is clicked is to submit the form's data to a URL that processes the data. 
   event.preventDefault();
 
-  //Accessing the form elements object(?) and storing it in a variable. This '.elements' property returns a collection of all the form controls within the form (input elements, select boxes, textareas, buttons, etc.)
+  //Accessing the form elements object and storing it in a variable. This '.elements' property returns a collection of all the form controls within the form (input elements, select boxes, textareas, buttons, etc.)
   const formElements = form.elements;
 
   //Get values from form elements
@@ -144,9 +176,6 @@ form.addEventListener("submit", function (event) {
   //Log the updated task list array
   console.log(taskList);
 });
-
-
-
 
 
 /* MAKING A FUNCTION THAT FORMATS NEW TASKS AND PUSHES THEM INTO AN ARRAY */
@@ -195,8 +224,6 @@ addTask("Database testing", "Testing/Debugging", 80, 5, "Deloitte");
 
 //Log the initial state of the task list array
 //console.log(taskList);
-
-
 
 
 
