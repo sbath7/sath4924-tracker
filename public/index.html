@@ -27,7 +27,6 @@
         <!-- Touch Grass 'TG' logo that links back to the home page -->
         <li> <a href="index.html" id="logo"> <img src="/app_assets/tg.png" alt="/" width="/" height="/"> </a> </li>
         <!-- Information button -->
-        <li><span class="material-symbols-outlined" id="i-button" style="font-size: 43px"> info_i </span></li>
       </ul>
 
       <!-- Decorative Title Heading. This is displayed as an image as the custom font is not compatible for web dev. -->
@@ -35,14 +34,24 @@
 
       <ul class="nav-links"> 
         <!-- Alternate Views button -->
-        <li><span class="material-symbols-outlined" style="font-size: 43px"> grid_view </span></li>
+        <li><span class="material-symbols-outlined" id="i-button" style="font-size: 30px"> info_i </span></li>
+        <li><span class="material-symbols-outlined" style="font-size: 30px"> grid_view </span></li>
       </ul>
     </nav>
- 
+
     <!-- decorative flowers and grass hero image -->
-    <img id ="header-illustration" src="/app_assets/header_illustration.png" alt="/">
+     <img id ="header-illustration" src="/app_assets/header_illustration.png" alt="/">
+    
+    <!-- <picture>
+      <source media="(max-width: 430px)" srcset="/app_assets/header_mobile.png">
+      <source class="header-illustration" media="(min-width: 431px)" srcset="/app_assets/header_illustration.png">
+      <img class="header-illustration" src="/app_assets/header_illustration.png" alt="A descriptive text about the image" style="width:auto;">
+    </picture> -->
+
+
   </header>
 
+  
   
 
 
@@ -56,11 +65,11 @@
         <div id="circle">
           <p> 0% </p>
         </div>
-        <div class= weekly-goal-text>
+        <div id= weekly-goal-text>
           <h2><strong>Enjoy 2 hours in nature this week</strong></h2>
           <p>Spend at least <strong>20 minutes</strong> today to stay on <br> track and boost your overall well-being.</p>
         </div>
-        <img src="/app_assets/weekly_goal_illustration.png" alt="/">
+        <img id="goal-illustration" src="/app_assets/weekly_goal_illustration.png" alt="/">
       </div>
 
       <!-- current day indicator-->
@@ -128,6 +137,7 @@
           <h2>Mood</h2>
           <p>How are you feeling today?</p>
           <br>
+          <br>
           <!-- wellbeing metrics' green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
@@ -137,6 +147,7 @@
         <div class="wellbeing-metric-unlogged">
           <h2>Self-esteem</h2>
           <p>How was your self-esteem today?</p>
+          <br>
           <br>
           <!-- wellbeing metrics' green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
@@ -166,15 +177,130 @@
 
     </section>
 
-    <!-- 'Log nature time' Modal -->
-    <!-- Wellbeing Metrics Carousel -->
+
+    <section id="log-nature-time">
+      <!-- 'log nature time' modal -->
+      <div id="nature-time-modal">
+        <h1>I 'Touched Grass'!</h1>
+        <!-- form to capture nature time data -->
+        <form>
+          <!-- Input fields for hours and minutes -->
+          <fieldset class="form-row">
+            <legend>For how long?</legend>
+            <label for="natureTimeHours">hour(s)</label>
+            <input type="number" name="natureTimeHours" id="natureTimeHours" required="true" />
+
+            <label for="natureTimeMin">min(s)</label>
+            <input type="number" name="natureTimeMin" id="natureTimeMin" required="true">
+          </fieldset>
+
+          <!-- Dropdown select for task type -->
+          <div id="time-of-day" class="form-row">
+            <label for="timeOfDay">At what time of day?</label>
+            <select name="timeOfDay" id="timeOfDay" required="true">
+              <option disabled label="Select One" selected values="">Select One</option>
+              <!-- value attribute contains the data value to submit to the server when that option is selected. -->
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+              <option value="Night">Night</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </section>
 
 
+    <section id="mood">
+      <!-- log mood modal -->
+      <div id="mood-modal"> 
+        <!-- modal heading -->
+        <h1>Mood</h1>
+
+        <!-- image container for different moods displayed -->
+        <div class="image-container">
+          <img id="mood-image" src="" alt="Mood Image">
+        </div>
+
+        <!-- container for different mood words displayed -->
+        <div id="mood-word"></div>
+        
+        <!-- form to capture mood data -->
+        <form>
+          <label for="mood-range"> How are you feeling today? </label>
+          <input type="range" id="mood-range" min="0" max="4" step="1">
+        </form>
+      </div> 
+    </section>
 
 
+    <section id="self-esteem">
+      <!-- log self-esteem modal -->
+      <div id="self-esteem-modal"> 
+        <!-- modal heading -->
+        <h1>Self-Esteem</h1>
+
+        <!-- image container for different self-esteem ratings displayed -->
+        <div class="image-container">
+          <img id="self-esteem-image" src="" alt="Self-Esteem Image">
+        </div>
+
+        <!-- container for different mood words displayed -->
+        <div id="self-esteem-word"></div>
+        
+        <!-- form to capture mood data -->
+        <form>
+          <label for="self-esteem-range"> How was your self esteem today? </label>
+          <input type="range" id="self-esteem-range" min="0" max="4" step="1">
+        </form>
+      </div> 
+    </section>
 
 
+    <section id="stress">
+      <!-- log stress modal -->
+      <div id="stress-modal"> 
+        <!-- stress heading -->
+        <h1>Stress</h1>
 
+        <!-- image container for different stress levels displayed -->
+        <div class="image-container">
+          <img id="stress-image" src="" alt="Stress Image">
+        </div>
+
+        <!-- container for different mood words displayed -->
+        <div id="stress-word"></div>
+        
+        <!-- form to capture mood data -->
+        <form>
+          <label for="stress-range"> How were your stress-levels today? </label>
+          <input type="range" id="stress-range" min="0" max="4" step="1">
+        </form>
+      </div> 
+    </section>
+
+
+    <section id="sleep">
+      <!-- log sleep modal -->
+      <div id="sleep-modal"> 
+        <!-- sleep heading -->
+        <h1>Sleep</h1>
+
+        <!-- image container for different sleep ratings displayed -->
+        <div class="image-container">
+          <img id="sleep-image" src="" alt="Sleep Image">
+        </div>
+
+        <!-- container for different sleep rating words displayed -->
+        <div id="sleep-word"></div>
+        
+        <!-- form to capture sleep data -->
+        <form>
+          <label for="sleep-range"> How was your sleep last night? </label>
+          <input type="range" id="sleep-range" min="0" max="4" step="1">
+        </form>
+      </div> 
+    </section>
 
   </main>
 </body>
@@ -187,122 +313,6 @@
 <!-- ---------------
 EXPERIMENTATION/ASSETS
 --------------- -->
-  <!-- 'log nature time' modal -->
-  <div id="nature-time-modal">
-    <h1>I 'Touched Grass'!</h1>
-    <!-- form to capture nature time data -->
-    <form>
-      <!-- Input fields for hours and minutes -->
-      <fieldset class="form-row">
-        <legend>For how long?</legend>
-        <label for="natureTimeHours">hour(s)</label>
-        <input type="number" name="natureTimeHours" id="natureTimeHours" required="true" />
-
-        <label for="natureTimeMin">min(s)</label>
-        <input type="number" name="natureTimeMin" id="natureTimeMin" required="true">
-      </fieldset>
-
-      <!-- Dropdown select for task type -->
-      <div class="form-row">
-        <label for="timeOfDay">At what time of day?</label>
-        <select name="timeOfDay" id="timeOfDay" required="true">
-          <option disabled label="Select One" selected values="">Select One</option>
-          <!-- value attribute contains the data value to submit to the server when that option is selected. -->
-          <option value="Morning">Morning</option>
-          <option value="Afternoon">Afternoon</option>
-          <option value="Evening">Evening</option>
-          <option value="Night">Night</option>
-        </select>
-      </div>
-    </form>
-  </div>
-
-
-  <!-- log mood modal -->
-  <div id="mood-modal"> 
-    <!-- modal heading -->
-    <h1>Mood</h1>
-
-    <!-- image container for different moods displayed -->
-    <div class="image-container">
-      <img id="mood-image" src="" alt="Mood Image">
-    </div>
-
-    <!-- container for different mood words displayed -->
-    <div id="mood-word"></div>
-    
-    <!-- form to capture mood data -->
-    <form>
-      <label for="mood-range"> How are you feeling today? </label>
-      <input type="range" id="mood-range" min="0" max="4" step="1">
-    </form>
-  </div> 
-
-
-  <!--Container for the entire content -->
-  <div class="container">
-
-    <!-- Form to capture task data -->
-    <form id="taskForm">
-
-      <!-- an input element is needed for each of the pieces of data associated with the tasks -->
-      <!-- recommended structure copied from W4 TUT to create accessible forms and to help with CSS styling -->
-      <!-- input field for task name -->
-      <div class="form-row">
-        <!-- for attribute is being used to connect the label with the input. This is especially important for acessibility devices like screen readers. -->
-        <label for="taskName">Name</label>
-        <!-- type is specifying the kind of data that the input accepts -->
-        <!-- the name attribute is used for handling data submission, allowing us to access the form values by referring to their name. -->
-        <!-- for inputs, the id must be the same value as the for attribute on the label element-->
-        <!-- required attribute makes the field mandatory for the user(?), providing a message if left blank-->
-        <input type="text" name="taskName" id="taskName" required="true" />
-      </div>
-
-      <!-- Dropdown select for task type -->
-      <div class="form-row">
-        <label for="taskType">Type</label>
-        <select name="taskType" id="taskType" required="true">
-          <option disabled label="Select One" selected values="">Select One</option>
-          <!-- value attribute contains the data value to submit to the server when that option is selected. -->
-          <option value="Concept Ideation">Concept Ideation</option>
-          <option value="Wireframe Design">Wireframe Design</option>
-          <option value="Application Coding">Application Coding</option>
-          <option value="Testing/Debugging">Testing/Debugging</option>
-        </select>
-      </div>
-
-      <!-- Input field for task rate -->
-      <div class="form-row">
-        <label for="taskRate">Rate</label>
-        <input type="number" name="taskRate" id="taskRate" required="true" />
-      </div>
-
-      <!-- Input field for task time -->
-      <div class="form-row">
-        <label for="taskTime">Time (hours)</label>
-        <input type="number" name="taskTime" id="taskTime" required="true" />
-      </div>
-
-      <!-- Input field for task client -->
-      <div class="form-row">
-        <label for="taskClient">Client</label>
-        <input type="text" name="taskClient" id="taskClient" required="true" />
-      </div>
-
-      <!-- Submit button to add task -->
-      <div class="form-row">
-        <input type="submit" value="Add Task">
-      </div>
-    </form>
-
-
-
-    <!-- adding a place for our tasks to be displayed when we start adding them to the page. -->
-    <h2>Tasks</h2>
-    <!-- un-ordered list -->
-    <ul id="taskList"></ul>
-  </div>
-
 
   <!-- Javascript file for handling form submission and task display -->
   <script src="script.js"></script>

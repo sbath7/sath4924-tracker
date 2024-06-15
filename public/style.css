@@ -14,9 +14,10 @@ html, body {
   padding: 0;
 }
 
-
 header {
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* The 'navbar' class is being used to assign flex and other properties to the header. */
@@ -24,7 +25,7 @@ header {
   /*positioned within context of the body*/
   position: fixed;
   /*the header will be as wide as the body*/
-  width: 100%; 
+  width: 100%;
   /*assigning flexbox*/
   display: flex; 
   /*centers contents along the main axis*/
@@ -50,13 +51,16 @@ header {
 }
 
 main {
-  padding: 1.7rem;
+  padding: 1.1rem;
 }
 
-#header-illustration{
-  padding-top: 4rem;
+#header-illustration {
   width: 100%;
+  max-width: 100vw; /* In case 100vw causes issues with overflow */
+  height: auto;
+  padding-top: 2.7rem; /* Optional padding */
 }
+
 
 #weekly-goal-box {
   display:flex;
@@ -66,6 +70,7 @@ main {
   background-color: #CFE2B7; /* mint green background color */
   border-radius: 20px; /* Rounded corners */
   box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  padding: 1rem;
 }
 
 
@@ -149,8 +154,8 @@ h2{
   color: #CFE2B7;
   border: none;
   font-family: 'DM Sans', sans-serif;
-  border-radius: 25px;
-  padding: 0.65rem;
+  border-radius: 40px;
+  padding: 0.9rem;
   font-size: 1.25rem;
   display:flex;
   align-items: center;
@@ -169,7 +174,7 @@ h2{
   color: #3E620D;
   background-color: #CFE2B7; /* mint green background color */
   border-radius: 20px; /* Rounded corners */
-  padding: 30px 30px;
+  padding: 30px;
   flex: 1 1 calc(40% - 2rem); /*Each box takes up 40% of the container's width, minus the gap*/
 }
 
@@ -179,46 +184,84 @@ h2{
   border: none;
   border-radius: 3.125rem;
   padding: 1.2rem;
-  display:flex;
+  display: flex;
   align-items: center;
   transform: translateX(115px); /* Moves the item 20px to the right */
+}
+
+/*creating a border for the form, adding width, margin and padding to center it*/
+  
+#nature-time-modal > form {
+  display:flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  max-width: 500px;
+}
+
+fieldset.form-row{
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+fieldset > legend{
+  padding-bottom:1rem;
+}
+
+#time-of-day {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+
+/* MEDIA QUERIES - LARGER MOBILE DEVICE 430x932 */
+@media screen and (max-width: 430px) {
+
+  /*reducing the font sizes*/
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+  }
+
+  p {
+    font-size: rem;
+  }
+
+  #title {
+    display:none;
+  }
+
+  #goal-illustration{
+    display:none;
+  }
+
+  #header-illustration{
+    margin-top: 5rem;
+    display: inline;
+    width: 300%;
+
+  }
+
+  #circle {
+    width: 100px;
+    height: 100px;
+  }
+
+
+  
+
+
+
 }
 
 
 
 
+  
 
-
-/*
-  //positioning the title 'Task Tracker' in the center of the page. Using flexbox?
-  header > h1 {
-    text-align: center;
-  }
-  
-  //creating a border for the form, adding width, margin and padding to center it
-  form {
-    max-width: 500px;
-    margin: 0 auto;
-    border: 2px solid grey;
-    padding: 2em 1em;
-  }
-  
-  
-  .form-row {
-    //making each individual input/label and submit button's container a flexbox
-    display: flex;
-    //aligning the flex container's items, respectively, to the right end of the container as the default axis is horizontal
-    justify-content: flex-end;
-    padding: .5em;
-  }
-  
-  //setting a fixed width of 100 pixels for all the labels to make them nice and consistent
-  .form-row > label {
-    width: 100px;
-  }
-   
-  //providing padding to the input fields and increasing their size to fill up the available space in the flex container
-  .form-row > input , select {
-    padding: .5em;
-    flex-grow: 1;
-  }*/
