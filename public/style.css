@@ -1,25 +1,75 @@
-/* html {
-    height: 100%;
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-  } */
-  
 /*Basic CSS reset to reset default browser styles and ensure consistent pages across browsers*/
 html, body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
 }
-  
-  /*positioning the title 'Task Tracker' in the center of the page. Using flexbox?*/
+
+/*resetting the default ul margins*/
+.navbar > ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  width: 100%;
+}
+
+/* The 'navbar' class is being used to assign flex and other properties to the header. */
+.navbar {
+  /*positioned within context of the body*/
+  position: fixed;
+  /*the header will be as wide as the body*/
+  width: 100%; 
+  /*assigning flexbox*/
+  display: flex; 
+  /*centers contents along the main axis*/
+  justify-content: space-between;
+  /*centers contents along the cross axis*/
+  align-items: center;
+  /*white colour*/
+  background-color: white;
+  /*stacks the header in front of all other content*/
+  z-index: 1000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
+/*Using flexbox to layout the navigation page links*/
+.nav-links {
+  display: flex;
+  /*adds a small gap between each link*/
+  gap: 1.5rem;
+  /*removes the bullet points*/
+  list-style: none;
+}
+
+main {
+  padding: 1.7rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+  //positioning the title 'Task Tracker' in the center of the page. Using flexbox?
   header > h1 {
     text-align: center;
   }
   
-  /*creating a border for the form, adding width, margin and padding to center it*/
+  //creating a border for the form, adding width, margin and padding to center it
   form {
     max-width: 500px;
     margin: 0 auto;
@@ -29,20 +79,35 @@ html, body {
   
   
   .form-row {
-    /*making each individual input/label and submit button's container a flexbox*/
+    //making each individual input/label and submit button's container a flexbox
     display: flex;
-    /*aligning the flex container's items, respectively, to the right end of the container as the default axis is horizontal*/
+    //aligning the flex container's items, respectively, to the right end of the container as the default axis is horizontal
     justify-content: flex-end;
     padding: .5em;
   }
   
-  /*setting a fixed width of 100 pixels for all the labels to make them nice and consistent*/
+  //setting a fixed width of 100 pixels for all the labels to make them nice and consistent
   .form-row > label {
     width: 100px;
   }
    
-  /*providing padding to the input fields and increasing their size to fill up the available space in the flex container*/
+  //providing padding to the input fields and increasing their size to fill up the available space in the flex container
   .form-row > input , select {
     padding: .5em;
     flex-grow: 1;
   }
+  */
+
+/* MEDIA QUERIES - SMALLER MOBILE DEVICE 375x667 */
+@media screen and (max-width: 375px) {
+  /*removing the touch grass text*/
+  #title {
+    display:none;
+  }
+
+
+
+
+
+
+}

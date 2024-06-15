@@ -6,7 +6,7 @@ const taskListElement = document.querySelector("#taskList");
 let taskList = [];
 
 
-//DYNAMIC MOOD RANGE
+/*DYNAMIC MOOD RANGE
 document.addEventListener('DOMContentLoaded', function() {
   const moodRange = document.getElementById('mood-range');
   const moodWord = document.getElementById('mood-word');
@@ -32,9 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize with the first mood
   updateMood();
 });
-
-
-
+*/
 
 
 

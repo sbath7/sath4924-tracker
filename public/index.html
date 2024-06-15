@@ -5,41 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>'Touch Grass' - Tracking Application</title>
+  <!-- linking the CSS sheet-->
   <link rel="stylesheet" href="style.css">
-  <!-- linking the DM Sans font which will be used for H2 and p -->
+  <!-- linking the DM Sans font which will be used for h1, h2 and p -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <!-- linking the google material symbols system to use their icons -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 
-
 <body>
-
+  
   <!-- Header section -->
-  <header class=navbar>
-    <!-- Decorative Title Heading. This is displayed as an image as the custom font is not compatible for web dev. -->
-    <img src="/app_assets/touch_grass.png"
-      alt="the words 'Touch Grass' written in a decorative font with plants and flowers intertwined around the letters. ">
+  <header>
+    <nav class="navbar">
+      <!-- navigation elements-->
+      
+      <ul class="nav-links">
+        <!-- Touch Grass 'TG' logo that links back to the home page -->
+        <li> <a href="index.html" id="logo"> <img src="/app_assets/tg.png" alt="/" width="/" height="/"> </a> </li>
+        <!-- Information button -->
+        <li><span class="material-symbols-outlined" style="font-size: 43px"> info_i </span></li>
+      </ul>
 
-    <!-- navigation elements-->
-    <ul class="nav-list">
-      <!-- Touch Grass 'TG' logo that links back to the home page -->
-      <li> <a href="index.html" id="logo"> <img src="/app_assets/tg.png" alt="/" width="/" height="/"> </a> </li>
-      <!-- Information button -->
-      <li> <button class="/"> <span class="material-symbols-outlined"> info_i </span> </button> </li>
-      <!-- Alternate Views button -->
-      <li> <button class="/"> <span class="material-symbols-outlined"> grid_view </span> </button> </li>
-    </ul>
-
-    <!-- decorative flowers and grass hero image -->
-    <img src="/app_assets/header_illustration.png" alt="/">
+      <!-- Decorative Title Heading. This is displayed as an image as the custom font is not compatible for web dev. -->
+      <img id="title" src="/app_assets/touch_grass.png" alt="the words 'Touch Grass' written in a decorative font with plants and flowers intertwined around the letters. ">
+      
+      <ul class="nav-links"> 
+        <!-- Alternate Views button -->
+        <li><span class="material-symbols-outlined" style="font-size: 43px"> grid_view </span></li>
+      </ul>
+    </nav>
+ 
+    <!-- decorative flowers and grass hero image 
+    <img id ="header-illustration" src="/app_assets/header_illustration.png" alt="/">
+    -->
   </header>
+
+  
+
 
 
   <main>
@@ -155,65 +161,9 @@
     </section>
 
     <!-- 'Log nature time' Modal -->
-    <!-- Mood Modal -->
-    <!-- Self-esteem Modal -->
-    <!-- Stress Modal -->
-    <!-- Sleep Modal -->
-
-    <!-- 'log nature time' modal -->
-    <div id="nature-time-modal">
-      <h1>I 'Touched Grass'!</h1>
-      <!-- form to capture nature time data -->
-      <form>
-        <!-- Input fields for hours and minutes -->
-        <fieldset class="form-row">
-          <legend>For how long?</legend>
-          <label for="natureTimeHours">hour(s)</label>
-          <input type="number" name="natureTimeHours" id="natureTimeHours" required="true" />
-
-          <label for="natureTimeMin">min(s)</label>
-          <input type="number" name="natureTimeMin" id="natureTimeMin" required="true">
-        </fieldset>
-
-        <!-- Dropdown select for task type -->
-        <div class="form-row">
-          <label for="timeOfDay">At what time of day?</label>
-          <select name="timeOfDay" id="timeOfDay" required="true">
-            <option disabled label="Select One" selected values="">Select One</option>
-            <!-- value attribute contains the data value to submit to the server when that option is selected. -->
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Evening">Evening</option>
-            <option value="Night">Night</option>
-          </select>
-        </div>
-      </form>
-    </div>
+    <!-- Wellbeing Metrics Carousel -->
 
 
-    <!-- log mood modal -->
-    <div id="mood-modal"> 
-      <!-- modal heading -->
-      <h1>Mood</h1>
-
-      <!-- image container for different moods displayed -->
-      <div class="image-container">
-        <img id="mood-image" src="" alt="Mood Image">
-      </div>
-
-      <!-- container for different mood words displayed -->
-      <div id="mood-word"></div>
-      
-      <!-- form to capture mood data -->
-      <form>
-        <label for="mood-range"> How are you feeling today? </label>
-        <input type="range" id="mood-range" min="0" max="4" step="1">
-      </form>
-    </div>
-
-
-
-    
 
 
 
@@ -221,17 +171,66 @@
 
 
   </main>
+</body>
 
 
 
 
 
 
+<!-- ---------------
+EXPERIMENTATION/ASSETS
+--------------- -->
+  <!-- 'log nature time' modal -->
+  <div id="nature-time-modal">
+    <h1>I 'Touched Grass'!</h1>
+    <!-- form to capture nature time data -->
+    <form>
+      <!-- Input fields for hours and minutes -->
+      <fieldset class="form-row">
+        <legend>For how long?</legend>
+        <label for="natureTimeHours">hour(s)</label>
+        <input type="number" name="natureTimeHours" id="natureTimeHours" required="true" />
+
+        <label for="natureTimeMin">min(s)</label>
+        <input type="number" name="natureTimeMin" id="natureTimeMin" required="true">
+      </fieldset>
+
+      <!-- Dropdown select for task type -->
+      <div class="form-row">
+        <label for="timeOfDay">At what time of day?</label>
+        <select name="timeOfDay" id="timeOfDay" required="true">
+          <option disabled label="Select One" selected values="">Select One</option>
+          <!-- value attribute contains the data value to submit to the server when that option is selected. -->
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+          <option value="Night">Night</option>
+        </select>
+      </div>
+    </form>
+  </div>
 
 
+  <!-- log mood modal -->
+  <div id="mood-modal"> 
+    <!-- modal heading -->
+    <h1>Mood</h1>
 
+    <!-- image container for different moods displayed -->
+    <div class="image-container">
+      <img id="mood-image" src="" alt="Mood Image">
+    </div>
 
-
+    <!-- container for different mood words displayed -->
+    <div id="mood-word"></div>
+    
+    <!-- form to capture mood data -->
+    <form>
+      <label for="mood-range"> How are you feeling today? </label>
+      <input type="range" id="mood-range" min="0" max="4" step="1">
+    </form>
+  </div> 
 
 
   <!--Container for the entire content -->
@@ -299,11 +298,7 @@
   </div>
 
 
-
   <!-- Javascript file for handling form submission and task display -->
   <script src="script.js"></script>
-</body>
-
-
 
 </html>
