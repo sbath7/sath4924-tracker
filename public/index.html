@@ -27,21 +27,20 @@
         <!-- Touch Grass 'TG' logo that links back to the home page -->
         <li> <a href="index.html" id="logo"> <img src="/app_assets/tg.png" alt="/" width="/" height="/"> </a> </li>
         <!-- Information button -->
-        <li><span class="material-symbols-outlined" style="font-size: 43px"> info_i </span></li>
+        <li><span class="material-symbols-outlined" id="i-button" style="font-size: 43px"> info_i </span></li>
       </ul>
 
       <!-- Decorative Title Heading. This is displayed as an image as the custom font is not compatible for web dev. -->
       <img id="title" src="/app_assets/touch_grass.png" alt="the words 'Touch Grass' written in a decorative font with plants and flowers intertwined around the letters. ">
-      
+
       <ul class="nav-links"> 
         <!-- Alternate Views button -->
         <li><span class="material-symbols-outlined" style="font-size: 43px"> grid_view </span></li>
       </ul>
     </nav>
  
-    <!-- decorative flowers and grass hero image 
+    <!-- decorative flowers and grass hero image -->
     <img id ="header-illustration" src="/app_assets/header_illustration.png" alt="/">
-    -->
   </header>
 
   
@@ -54,44 +53,49 @@
 
       <!-- weekly goal tracker-->
       <div id="weekly-goal-box">
-        <p> 0% </p>
-        <h2><strong>Enjoy 2 hours in nature this week</strong></h2>
-        <p>Spend at least <strong>20 minutes</strong> today to stay on track and boost your overall well-being.</p>
+        <div id="circle">
+          <p> 0% </p>
+        </div>
+        <div class= weekly-goal-text>
+          <h2><strong>Enjoy 2 hours in nature this week</strong></h2>
+          <p>Spend at least <strong>20 minutes</strong> today to stay on <br> track and boost your overall well-being.</p>
+        </div>
         <img src="/app_assets/weekly_goal_illustration.png" alt="/">
       </div>
 
       <!-- current day indicator-->
-      <p>Thursday, 25th April</p>
-      <ul>
-        <li>
-          <p>22<br>M</p>
-        </li>
-        <li>
-          <p>23<br>Tu</p>
-        </li>
-        <li>
-          <p>24<br>W</p>
-        </li>
-        <li>
-          <p>25<br>Th</p>
-        </li>
-        <li>
-          <p>26<br>F</p>
-        </li>
-        <li>
-          <p>27<br>Sa</p>
-        </li>
-        <li>
-          <p>28<br>Su</p>
-        </li>
-      </ul>
+      <div id="week-container">
+        <p id="today-date"><strong>Thursday, 25th April</strong></p>
+        <ul id="days-of-week">
+          <li>
+            <p>22<br>M</p>
+          </li>
+          <li>
+            <p>23<br>Tu</p>
+          </li>
+          <li>
+            <p>24<br>W</p>
+          </li>
+          <li>
+            <span id="today"><p>25<br>Th</p></span>
+          </li>
+          <li>
+            <p>26<br>F</p>
+          </li>
+          <li>
+            <p>27<br>Sa</p>
+          </li>
+          <li>
+            <p>28<br>Su</p>
+          </li>
+        </ul>
 
-      <!-- line break-->
-      <br>
+        <!-- line break-->
+        <br>
 
-      <!-- tiny arrow pointing down -->
-      <span id="overview-arrow" class="material-symbols-outlined"> arrow_drop_down </span>
-
+        <!-- tiny arrow pointing down -->
+        <span id="overview-arrow" class="material-symbols-outlined"> arrow_drop_down </span>
+      </div>
       <!-- horizontal rule visually dividing section 1 from section 2 -->
       <hr>
     </section>
