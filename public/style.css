@@ -35,7 +35,7 @@ header {
   background-color: white;
   /*stacks the header in front of all other content*/
   z-index: 1000;
-  padding: 2rem 1rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -128,6 +128,65 @@ h2{
 }
 
 
+#logging{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.logging-column{
+  flex: 1;
+}
+
+#nature-time-half{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+#nature-time-button{
+  background-color: #3E620D;
+  color: #CFE2B7;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 25px;
+  padding: 0.65rem;
+  font-size: 1.25rem;
+  display:flex;
+  align-items: center;
+  gap: 0.7rem;
+  transform:translateY(53px)
+}
+
+#wellbeing-half {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 1.7rem;
+}
+
+.wellbeing-metric-unlogged {
+  color: #3E620D;
+  background-color: #CFE2B7; /* mint green background color */
+  border-radius: 20px; /* Rounded corners */
+  padding: 30px 30px;
+  flex: 1 1 calc(40% - 2rem); /*Each box takes up 40% of the container's width, minus the gap*/
+}
+
+.wellbeing-button{
+  background-color: #3E620D;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 3.125rem;
+  padding: 1.2rem;
+  display:flex;
+  align-items: center;
+  transform: translateX(115px); /* Moves the item 20px to the right */
+}
+
+
+
+
 
 
 /*
@@ -162,22 +221,4 @@ h2{
   .form-row > input , select {
     padding: .5em;
     flex-grow: 1;
-  }
-  */
-
-/* MEDIA QUERIES - LARGER MOBILE DEVICE 430x932 */
-@media screen and (max-width: 430px) {
- /*reducing font sizes*/
-  h1 {
-    font-size: 36px; 
-  } 
-  
-  h2 {
-   font-size: 18px; 
-  }
- 
-  p {
-   font-size: 16px; 
-  }
-
-}
+  }*/

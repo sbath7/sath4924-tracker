@@ -104,31 +104,30 @@
     <section id="logging">
 
       <!-- contains the 'nature time' content -->
-      <div id="nature-time-left-half">
-
-        <h1>My Day</h1>
-
-        <p>Thursday, 25th April</p>
+      <div id="nature-time-half" class="logging-column">
+        <div id="text-content">
+          <h1>My Day</h1>
+          <p>Thursday, 25th April</p>
+          <!-- aside to the user -->
+          <p><i>Feeling down?<br>You haven't touched grass all week!</i></p>
+        </div>
 
         <!-- 'Log nature time' button with an '+' icon -->
-        <button class="nature-time-button" onclick="openNatureTimePopup()">
+        <button id="nature-time-button" onclick="openNatureTimePopup()">
           <span id="plus-button" class="material-symbols-outlined"> add </span> Log nature time
-        </button>
-
-        <!-- aside to the user -->
-        <p><i>Feeling down?<br>You haven't touched grass all week!</i></p>
-
-        <!-- vertical line dividing the 'nature time' half from the wellbeing metrics half -->
-        <div class="vertical-line"></div>
-
+        </button>        
       </div>
 
+      <!-- vertical line dividing the 'nature time' half from the wellbeing metrics half -->
+      <hr id="vertical-line">
+
       <!-- contains the four wellbeing metric cards -->
-      <div id="wellbeing-right-half">
+      <div id="wellbeing-half" class="logging-column">
         <!-- mood -->
         <div class="wellbeing-metric-unlogged">
           <h2>Mood</h2>
           <p>How are you feeling today?</p>
+          <br>
           <!-- wellbeing metrics' green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
@@ -136,8 +135,9 @@
 
         <!-- self-esteem -->
         <div class="wellbeing-metric-unlogged">
-          <h2>Mood</h2>
+          <h2>Self-esteem</h2>
           <p>How was your self-esteem today?</p>
+          <br>
           <!-- wellbeing metrics' green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
@@ -147,6 +147,7 @@
         <div class="wellbeing-metric-unlogged">
           <h2>Stress</h2>
           <p>Did you feel stressed today?</p>
+          <br>
           <!-- wellbeing metrics' green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
@@ -155,7 +156,8 @@
         <!-- sleep -->
         <div class="wellbeing-metric-unlogged">
           <h2>Sleep</h2>
-          <p>Sleep well last night?</p>
+          <p>How was your sleep last night?</p>
+          <br>
           <!-- wellbeing metrics' green '+' button -->
           <button class="wellbeing-button" onclick="openMoodPopup()"><span id="plus-button"
               class="material-symbols-outlined"> add </span></button>
